@@ -3,20 +3,26 @@
 <head>
 	<title>flashfict project</title>
 
+	<!-- reset css -->
 	<link rel="stylesheet" href="reset.css"/>
-	
+
+	<!-- google webfont: open sans -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="style.css"/>
-	
+
+	<!-- local stylesheet -->
+	<link rel="stylesheet" href="style.css"/> 
+
+	<!-- locally hosted copy of jquery-->
 	<script src="jquery.js"></script>
 
 
 </head>
 <body>
 
+	<!-- container div for entire page-->
 	<div class="container">
 
+		<!-- list for the left most bar-->
 		<ul>
 			<li><a href="http://flashfict.tumblr.com">flash fict</a></li>
 			<li><h1>prompts (beta)</h1></li>
@@ -25,13 +31,13 @@
 
 		<br>
 		
+		<!-- div containing the colored box-->
 		<div class="phraseBox">
 
-			<script type="text/javascript">
+		<script type="text/javascript">
 
-		//array of adjectives, first word in phrase
-
-		var  adjective = ["unknown","famous","poisonous","silent","awkward","rhyming","endless","tangled","universal","wounded","collapsing","brief","pink","single","obvious","lesser","greater","mighty","perfumed","sleepy", "vast","tenuous", "wispy","coarse","conscious","eminent","fearful","chaotic","quiet","still","untouched","pristine","vanishing","dancing","callous","candid","floral","festive","","whispering","cancerous","cardinal","diffuse","proud","constant","arrogant","caramel","sensuous","benign","malignant","leather","opal","red","chartreuse","purple"];
+		//array of adjectives, first part of the writing prompt
+		var  adjective = ["unknown","famous","poisonous","silent","awkward","rhyming","endless","tangled","universal","wounded","collapsing","brief","pink","single","obvious","lesser","greater","mighty","perfumed","sleepy", "vast","tenuous", "wispy","coarse","conscious","eminent","fearful","chaotic","quiet","still","untouched","pristine","vanishing","dancing","callous","candid","floral","festive","","whispering","cancerous","cardinal","diffuse","proud","constant","arrogant","caramel","sensuous","benign","malignant","leather","opal","red","chartreuse","purple","corrosive","pungent","faithful","remaining","enduring","falling","rising","dancing","faltering","western","eastern","northern","southern","American","French","Asian","wooden","illegal","hidden","invisible","crafty","sudden","booming"];
 
 
 
@@ -41,8 +47,7 @@
 
 
 		// array of nouns, second word in phrase
-
-		var noun = ["kings","cigarette","yarn","cards","windows","water","thief","merchant","death","earmuffs","pretzels","skin","finale","palace","arms","brawl","island","wig","cage","syrup","steel","razor","phone","concrete","gloves","clouds", "balance","eyelash","barber","sugar","wealth","polyester","country","scissors","desire","layer","wax","language","titanium","string","john doe","symbol","lace","tax","sara","diane","constitution","salon","apple","warfare", "surgeon"];
+		var noun = ["kings","cigarette","yarn","cards","windows","water","thief","merchant","death","earmuffs","pretzels","skin","finale","palace","arms","brawl","island","wig","cage","syrup","steel","razor","phone","concrete","gloves","clouds", "balance","eyelash","barber","sugar","wealth","polyester","country","scissors","desire","layer","wax","language","titanium","string","john doe","symbol","lace","tax","sara","diane","constitution","salon","apple","warfare", "surgeon", "men ", "women", "woman", "man ", "perfume", "box", "beast", "daggers", "glow", "lights", "nights", "days", "wind", "tears", "stars", "Calvin", "books", "monsters", "monsters", "Bible", "photograph", "beads", "sweat", "slaughter", "birth", "river", "lake", "explosion", "towel", "zipper", "cotton ", "thread", "phrase", "missive", "bicycle", "whale", "penguin"];
 
 	// length of noun array, for use in Random method
 	var nounSize = noun.length;
@@ -59,8 +64,8 @@
 	// Creates New Word
 	var CreateWord = function(){
 		ClearAll();
-		Phrase.adjective = adjective[Math.floor(Math.random() * adjSize) + 1]
-		Phrase.noun = noun[Math.floor(Math.random() * nounSize) + 1]
+		Phrase.adjective = adjective[Math.floor(Math.random() * adjSize) ]
+		Phrase.noun = noun[Math.floor(Math.random() * nounSize) ]
 	}
 
 	</script>
