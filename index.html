@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+	<title>flashfict project</title>
+
+	<link rel="stylesheet" href="reset.css"/>
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	
+	<link rel="stylesheet" href="style.css"/>
+	
+	<script src="jquery.js"></script>
+
+
+</head>
+<body>
+
+	<div class="container">
+
+		<ul>
+			<li><a href="http://flashfict.tumblr.com">flash fict</a></li>
+			<li><h1>prompts (beta)</h1></li>
+			<li><a href="#" class="more"> click here or refresh for a new prompt </a></li>
+		</ul>
+
+		<br>
+		
+		<div class="phraseBox">
+
+			<script type="text/javascript">
+
+		//array of adjectives, first word in phrase
+
+		var  adjective = ["unknown","famous","poisonous","silent","awkward","rhyming","endless","tangled","universal","wounded","collapsing","brief","pink","single","obvious","lesser","greater","mighty","perfumed","sleepy", "vast","tenuous", "wispy","coarse","conscious","eminent","fearful","chaotic","quiet","still","untouched","pristine","vanishing","dancing","callous","candid","floral","festive","","whispering","cancerous","cardinal","diffuse","proud","constant","arrogant","caramel","sensuous","benign","malignant","leather","opal","red","chartreuse","purple"];
+
+
+
+		//length of adjective array, for use in Random method
+
+		var adjSize = adjective.length;
+
+
+		// array of nouns, second word in phrase
+
+		var noun = ["kings","cigarette","yarn","cards","windows","water","thief","merchant","death","earmuffs","pretzels","skin","finale","palace","arms","brawl","island","wig","cage","syrup","steel","razor","phone","concrete","gloves","clouds", "balance","eyelash","barber","sugar","wealth","polyester","country","scissors","desire","layer","wax","language","titanium","string","john doe","symbol","lace","tax","sara","diane","constitution","salon","apple","warfare", "surgeon"];
+
+	// length of noun array, for use in Random method
+	var nounSize = noun.length;
+
+
+	// creation of the "Phrase" object
+	var Phrase = new Object();
+
+	// Clears Phrase
+	var ClearAll = function(){
+		$('.phrase').empty();}
+
+
+	// Creates New Word
+	var CreateWord = function(){
+		ClearAll();
+		Phrase.adjective = adjective[Math.floor(Math.random() * adjSize) + 1]
+		Phrase.noun = noun[Math.floor(Math.random() * nounSize) + 1]
+	}
+
+	</script>
+
+	<!-- Div containing the actual phrase itself (within .phraseBox)-->
+	<div class="phrase"></div>
+
+
+	<script>
+	
+	var ShowWord = function(){
+
+		$('.phrase').append(
+
+			"<p><span id = 'the'>" 
+
+			+ "the </br>" + 
+			
+			"</span><span id = 'adjective'>" +
+			
+			Phrase.adjective + " " + 
+			
+			"</span><span id='noun'>" +
+			
+			Phrase.noun +
+			
+			"</p></span>");
+	};
+
+	// Calls the createword function to create the word
+	$(document).ready(function(){
+		CreateWord();
+		ShowWord();
+	});
+
+	$('.more').click(function(){
+		CreateWord();
+		ShowWord();
+	});
+
+	</script>
+
+	
+
+
+	<!--closing of "Phrase" div-->
+</div>
+
+</div>
+
+</body>
+</html>
+
+
